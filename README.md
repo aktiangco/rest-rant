@@ -2,6 +2,13 @@
 
 REST-Rant is an app where users can review restaurants.
 
+###### User stories
+"As a ____(user type)_____ I need ____(feature)____ so I can ____(action)____"
+
+###### Color Scheme
+- ![#666c62](https://placehold.co/15x15/666c62/666c62.png) `#666c62` Primary 
+- ![#d9ded8](https://placehold.co/15x15/d9ded8/d9ded8.png) `#d9ded8` Secondary
+- ![#bf934c](https://placehold.co/15x15/bf934c/bf934c.png) `#bf934c` Highlight
 
 ###### Routes table format
 | Method | Path | Purpose |
@@ -24,8 +31,3 @@ REST-Rant is an app where users can review restaurants.
 - [ ] state (string)
 - [ ] cuisines (string)
 - [ ] pic (string)
-
-###### Color Scheme
-- ![#666c62](https://placehold.co/15x15/666c62/666c62.png) `#666c62` Primary 
-- ![#d9ded8](https://placehold.co/15x15/d9ded8/d9ded8.png) `#d9ded8` Secondary
-- ![#bf934c](https://placehold.co/15x15/bf934c/bf934c.png) `#bf934c` Highlight
