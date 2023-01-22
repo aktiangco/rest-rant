@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 // Making a Wildcard Route
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Page</h1>') // 404 Not Found
+    res.render('error404') // 404 Not Found
 });
 
 // Listening
