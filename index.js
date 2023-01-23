@@ -10,9 +10,15 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 app.use('/places', require('./controllers/places')) // added in front of any other path we define in the controller.
 
+// GET /places
+app.get('/', (req, res) => {
+    res.render('index')
+  })
+  
+
 // Declare routes that people can visit on the application.
 app.get('/', (req, res) => {
-    res.render(`Home`)
+    res.render(`home`)
 });
 
 // Making a Wildcard Route

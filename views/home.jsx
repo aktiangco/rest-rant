@@ -1,7 +1,7 @@
 const React = require('react')
 const Def = require('./default')
 
-function index (html) {
+function home () {
     return (
       <Def>
           <main>
@@ -12,4 +12,4 @@ function index (html) {
   }
   
 
-module.exports = index
+module.exports = home
