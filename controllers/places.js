@@ -27,6 +27,18 @@ router.get('/', (req, res) => {
         state: 'CA',
         cuisines: 'Sushi Bar, Japanese',
         pic: '/images/sushiFood.jpeg'
+      }, {
+        name: 'Tacos Fernandez',
+        city: 'San Diego',
+        state: 'CA',
+        cuisines: 'Taco, Mexican',
+        pic: '/images/taco.png'
+      }, {
+        name: 'Bobs Burger',
+        city: 'Austin',
+        state: 'TX',
+        cuisines: 'Burgers, American(Traditional)',
+        pic: '/images/burgers.webp'
       }
     ]    
     res.render('places/index', {places})
