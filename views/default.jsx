@@ -11,6 +11,9 @@ function Def (html) {
             <body>
                 {html.children}
             </body>
+            <footer>
+                
+            </footer>
         </html>
     )
   }
