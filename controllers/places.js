@@ -44,6 +44,9 @@ router.get('/', (req, res) => {
     res.render('places/index', {places})
 });
 
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
 
 
 // to import router to other files
