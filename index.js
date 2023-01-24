@@ -5,10 +5,12 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+// Express Settings
+app.set('views', __dirname + '/views') // double underscore "__dirname" = dunder-score
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
-
 app.use('/places', require('./controllers/places')) // added in front of any other path we define in the controller.
+app.use(express.static('public')) // Setup serving static assets
 
 // Declare routes that people can visit on the application.
 app.get('/', (req, res) => {
