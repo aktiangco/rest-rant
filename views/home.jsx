@@ -6,15 +6,16 @@ function home() {
       <Def>
           <main>
           <h1>REST-rant</h1>
+          <a href="/places">
+            <button className="btn-primary">Places</button>
+          </a>
           <div>
-            <img className="border border-warning" src="/images/fork.avif" alt="fork-knife-spoon on a plate"/>
+            <img className="border border-warning"src="/images/fork.avif" alt="fork-knife-spoon on a plate"/>
           </div>
           <div>
             Photo by <a href="https://unsplash.com/@gettyimages">Getty Images</a> on <a href="https://unsplash.com/photos/7bLKjfoDtcM">Unsplash</a>
           </div>
-          <a href="/places">
-            <button className="btn-primary">Places Page</button>
-          </a>
+       
           </main>
       </Def>
     )

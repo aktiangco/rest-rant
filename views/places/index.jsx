@@ -23,9 +23,10 @@ function index(data) {
         <main>
         <h1>PLACES INDEX PAGE</h1>
         <div className="backButton">
-          <a href="/"><button className="btn-primary">Go back Home</button></a>
+          <a href="/"><button className="btn-primary">Home</button></a>
           <a href="/places/new"><button className="btn-primary">Add a New Place</button></a>
         </div>
+      
         <div className="row">
           {placesFormatted}
         </div>

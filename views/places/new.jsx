@@ -7,7 +7,8 @@ function new_form() {
         <main>
           <h1>Add a New Place {/* Create Form*/}</h1>
           <div className="backButton">
-            <a href="/"><button className="btn-primary">Go back Home</button></a>
+            <a href="/"><button className="btn-primary">Home</button></a>
+            <a href="/places"><button className="btn-primary">Places</button></a>
           </div>
           <form action="/places" method="POST">
             <div className="form-group">

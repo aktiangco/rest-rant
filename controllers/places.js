@@ -4,15 +4,15 @@ const Places = require('../models/places.js') // index.jsx line# 6
 
 // Index
 router.get('/', (req, res) => {
-    res.render('places/index', {places})
+    res.render('places/index', {Places})
 });
 
 // Create
 router.post('/', (req, res) => {
-  // console.log(req.body)
+  console.log(req.body)
   if (!req.body.pic) {
     // Default image if one is not provided
-    req.body.pic = '/images/dining.jpeg'
+    req.body = '/images/dining.jpeg'
   }
   if (!req.body.city) {
     req.body.city = 'Anytown'

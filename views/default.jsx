@@ -13,7 +13,7 @@ function Def(html) {
             </body>
             <footer>
                 <div>
-                    <h4 id="footer">Eat World!!!</h4>
+                    <h4 id="footer">Eat U.S.A!!!</h4>
                 </div>
             </footer>
         </html>
