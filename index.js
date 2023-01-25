@@ -11,6 +11,7 @@ app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use('/places', require('./controllers/places')) // added in front of any other path we define in the controller.
 app.use(express.static('public')) // Setup serving static assets
+app.use(express.urlencoded({ extended: true })) //Sending and Receiving Your Form Data
 
 // Declare routes that people can visit on the application.
 app.get('/', (req, res) => {

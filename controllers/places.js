@@ -2,6 +2,7 @@
 const router = require('express').Router()
 
 
+
 router.get('/', (req, res) => {
     let places = [{
         name: 'H-Thai-ML',
@@ -44,9 +45,20 @@ router.get('/', (req, res) => {
     res.render('places/index', {places})
 });
 
+// Create
+router.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('POST /places')
+})
+
+// New
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
+
+
+
+
 
 
 // to import router to other files
