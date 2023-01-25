@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 // Create
 router.post('/', (req, res) => {
-  console.log(req.body)
+  console.log(req.body.pic)
   if (!req.body.pic) {
     // Default image if one is not provided
     req.body = '/images/dining.jpeg'
