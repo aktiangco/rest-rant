@@ -4,6 +4,7 @@ require('dotenv').config()
 // Require needed node modules
 const express = require('express')
 const app = express()
+const methodOverride = require('method-override')
 
 // Express Settings
 app.set('views', __dirname + '/views') // double underscore "__dirname" = dunder-score
@@ -11,6 +12,7 @@ app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public')) // Setup serving static assets
 app.use(express.urlencoded({ extended: true })) //Parse body data
+app.use(methodOverride('_method')) // allows to override form default
 
 // Controllers and Routes
 app.use('/places', require('./controllers/places')) // added in front of any other path we define in the controller.

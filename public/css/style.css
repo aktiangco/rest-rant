@@ -41,10 +41,27 @@ border-radius: 25%;
 
 footer {
     height: 60px;
+    padding: 10px;
+    display: flex;
+    width: 100%;
     text-align: center;
-    justify-content: baseline;
 }
-
+footer div:first-child {
+    display: flex;
+    justify-content: left;
+    flex-grow: 1;
+}
+footer div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    flex-grow: 3;
+}
+footer div:last-child {
+    display: flex;
+    justify-content: right;
+    flex-grow: 1;
+    
+}
 #footer {
     animation: color-change 1s infinite;
 }
@@ -55,7 +72,7 @@ footer {
 }
 
 nav {
-    background-color: cornflowerblue;
+    background-color: rgb(92, 92, 92);
     padding: 10px;
 }
 
