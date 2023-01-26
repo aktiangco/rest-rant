@@ -5,11 +5,7 @@ function new_form() {
     return (
       <Def>
         <main>
-          <h1>Add a New Place {/* Create Form*/}</h1>
-          <div className="backButton">
-            <a href="/"><button className="btn-primary">Home</button></a>
-            <a href="/places"><button className="btn-primary">Places</button></a>
-          </div>
+          <h1>Add a New Place {/* Create Form */}</h1>
           <form action="/places" method="POST">
             <div className="form-group">
               <label htmlFor="name">PLace Name:</label>
@@ -17,7 +13,7 @@ function new_form() {
             </div>
             <div className="form-group">
               <label htmlFor="pic">Place Picture:</label>
-              <input className="form-control" type="url" id="pic" name="pic"/>
+              <input className="form-control" type="text" id="pic" name="pic"/>
             </div>
             <div className="form-group">
               <label htmlFor="city">City:</label>

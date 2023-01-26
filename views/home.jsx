@@ -6,9 +6,7 @@ function home() {
       <Def>
           <main>
           <h1>REST-rant</h1>
-          <a href="/places">
-            <button className="btn-primary">Places</button>
-          </a>
+       
           <div>
             <img className="border border-warning"src="/images/fork.avif" alt="fork-knife-spoon on a plate"/>
           </div>

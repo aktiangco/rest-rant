@@ -3,9 +3,10 @@ const Def = require('../default')
 
 
 function index(data) {
-  let placesFormatted = data.Places.map((place) => {
+  let placesFormatted = data.places.map((place) => {
+    console.log(data)
     return (
-      <div  className="col-sm-4">
+      <div  className="col-sm-6">
         <h2>{place.name}</h2>
         <p className="text-center">
           {place.cuisines}
@@ -21,12 +22,7 @@ function index(data) {
   return (
     <Def>
         <main>
-        <h1>PLACES INDEX PAGE</h1>
-        <div className="backButton">
-          <a href="/"><button className="btn-primary">Home</button></a>
-          <a href="/places/new"><button className="btn-primary">Add a New Place</button></a>
-        </div>
-      
+        <h1>PLACES INDEX PAGE</h1>   
         <div className="row">
           {placesFormatted}
         </div>

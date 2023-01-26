@@ -8,6 +8,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+main {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: #666c62;
+}
+
 h2 {
     text-decoration: underline;
 }
@@ -19,14 +25,6 @@ h2 {
     object-fit: cover;
 }
 
-a {
-    color: #d9ded8;
-}
-a:hover {
-    text-decoration: none;
-    background-color: #d9ded8;
-    color: #bf934c;
-}
 .btn-primary:hover {
     color:#d9ded8;
     background-color: #bf934c;
@@ -56,3 +54,27 @@ footer {
     100% { color: #bf934c; }
 }
 
+nav {
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a {
+    color: #d9ded8;
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    color: #bf934c;
+    text-decoration: none;
+}
