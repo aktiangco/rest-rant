@@ -4,9 +4,11 @@ const Def = require('../default')
 function show(data) {
     return (
       <Def>
-            <section>Currently unrated</section>
-            <main>
-          <h1>{data.place.name} {/* SHOW DETAILS PAGE FOR ONE PLACE */}</h1>
+            
+        <main>
+        
+          <h1 className="text-warning">{data.place.name} {/* SHOW DETAILS PAGE FOR ONE PLACE */}</h1>
+          <br />
             <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
               Edit
             </a>  
@@ -15,7 +17,7 @@ function show(data) {
               Delete
             </button>
             </form>     
-
+            <section>Currently unrated</section>
             <section>No comments yet!</section>
           </main>
       </Def>

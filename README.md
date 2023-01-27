@@ -8,8 +8,9 @@ REST-Rant is an app where users can review restaurants.
 ###### Color Scheme
 - ![#666c62](https://placehold.co/15x15/666c62/666c62.png) `#666c62` Primary 
 - ![#d9ded8](https://placehold.co/15x15/d9ded8/d9ded8.png) `#d9ded8` Secondary
-- ![#bf934c](https://placehold.co/15x15/bf934c/bf934c.png) `#bf934c` Highlight
-###### Routes table format
+- ![#bf934c](https://placehold.co/15x15/bf934c/bf934c.png) `#bf934c` Accent Colors
+- ![##495057](https://placehold.co/15x15/#495057/#495057.png) `##495057` Extra 
+##### Routes table format
 | Method | Path | Purpose |
 | --- | --- | --- |
 | GET | / | Home page |

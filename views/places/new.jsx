@@ -4,9 +4,10 @@ const Def = require('../default')
 function new_form() {
     return (
       <Def>
-        <main>
-          <h1>Add a New Place {/* Create Form */}</h1>
-          <form action="/places" method="POST">
+        <main >
+          <h1 className="text-warning">Add a New Place {/* Create Form */}</h1>
+          <br />
+          <form className="container-fluid form-group w-75 " action="/places" method="POST">
             <div className="form-group">
               <label htmlFor="name">PLace Name:</label>
               <input className="form-control" id="name" name="name" required/>
@@ -21,7 +22,7 @@ function new_form() {
             </div>
             <div className="form-group">
               <label htmlFor="state">State:</label>
-              <input className="form-control" list="state" id="state" name="state" />
+              <input className="form-control" list="state" id="state" name="state"/>
               <datalist id="state-list">
                         <option value="AK">Alaska</option>
                         <option value="AL">Alabama</option>
@@ -77,9 +78,11 @@ function new_form() {
             <div className="form-group">
               <label htmlFor="cuisines">Cuisines:</label>
               <input className="form-control" id="cuisines" name="cuisines" required/>
+            </div>  
+            <br />
+            <div>
+              <input className="btn-primary" type="submit" value="Add Place" />
             </div>
-            
-            <input className="btn-primary" type="submit" value="Add Place"/>
           </form>
          </main>
       </Def>
