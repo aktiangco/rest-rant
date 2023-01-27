@@ -1,4 +1,9 @@
+/* Dark mode */
+:root {
+    color-scheme: dark;
+  }
 
+/* Body */
 body {
     background-color: #666c62;
     color: #d9ded8;
@@ -27,7 +32,7 @@ nav {
 
 
 
-
+/* img ID in index.jsx */
 .img-places {
     float: center;
     width:  300px;
@@ -72,6 +77,7 @@ footer div:last-child {
     flex-grow: 1;
     
 }
+/* To animate  */
 #footer {
     animation: color-change 1s infinite;
 }
