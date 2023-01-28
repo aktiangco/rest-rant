@@ -3,12 +3,14 @@
     color-scheme: dark;
   }
 
+
 /* Body */
 body {
     background-color: #666c62;
     color: #d9ded8;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    height: 100VH;
 
 }
 main {
@@ -39,6 +41,7 @@ nav {
     height: 300px;
     object-fit: cover;
 }
+
 /* Buttons */
 .btn-primary:hover {
     color:#495057;
@@ -50,6 +53,41 @@ nav {
 color:#ffc107;
 background-color: #495057;
 border-radius: 10%;
+border:1px solid #ffc107;
+}
+.btn-danger {
+    color:#dc3545;
+    background-color: #495057;
+    border-radius: 10%;
+    border:1px solid #dc3545;
+    }
+
+/* SHOW.JSX */
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.sections {
+    justify-content:space-between;
+    padding: 20px;
+
+}
+
+.comments{
+    border: 1px dashed #ffc107;
+    padding: 50px;
+}
+
+.edit-delete {
+    justify-content: center;
+    padding: 10px;
+    display: flex;
+}
+.edit-delete div:nth-child{
+    padding: 5px;
+    margin: 10px;
 }
 
 /* FOOTER */
