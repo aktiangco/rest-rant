@@ -7,9 +7,9 @@ function  edit_form(data) {
           <main>
           <h1 className="text-warning">Edit Place</h1>
           <br />
-          <form className="container-fluid form-group w-75 " action={`/places/${data.place.id}?_method=PUT`} method="POST"> {/*need to fix path {data.place.id} */}
+          <form className="container-fluid form-group w-75 " action={`/places/${data.id}?_method=PUT`} method="POST"> {/*need to fix path {data.place.id} */}
             <div className="row">
-              <div className="form-group col-sm-6">
+              <div className="form-group col-sm-6 text-left">
                 <label htmlFor="name">PLace Name:</label>
                 <input className="form-control" 
                 id="name" 
@@ -53,8 +53,8 @@ function  edit_form(data) {
                 />
               </div>  
               
-              <div>
-                <input className="btn btn-primary" type="submit" value="Edit Place" />
+              <div className="p-2">
+                <input className="btn btn-primary" type="submit" value="Save Edit" />
               </div>
             </div>
           </form>
