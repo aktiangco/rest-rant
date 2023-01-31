@@ -11,6 +11,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     height: 100VH;
+    
 
 }
 main {
@@ -24,17 +25,24 @@ main {
 h2 {
     text-decoration: underline;
 }
+.location {
+    text-align: right;
+}
+.forms-name {
+    text-align: left;
+}
 
 
 /* Nav */
 nav {
     background-color: #495057;
-    padding: 100px; 
+    padding: 100px;
+    
 }
 
 
 
-/* img ID in index.jsx */
+/* img ID in INDEX.JSX */
 .img-places {
     float: center;
     width:  300px;
@@ -93,10 +101,9 @@ border:1px solid #ffc107;
 /* FOOTER */
 footer {
     background-color: #495057;
-
-    padding: 10px;
     display: flex;
     width: 100%;
+    height: 50px;
     text-align: center;
 }
 footer div:first-child {
@@ -116,7 +123,7 @@ footer div:last-child {
     
 }
 /* To animate  */
-#footer {
+.footer-display {
     animation: color-change 1s infinite;
 }
 @keyframes color-change {
@@ -125,3 +132,39 @@ footer div:last-child {
     100% { color: #ffc107; }
 }
 
+/* Rating */
+
+.rating { 
+    border: none;
+    float: center;
+  }
+  
+  .rating > input { display: none; } 
+  .rating > label:before { 
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+  }
+  
+  .rating > .half:before { 
+    content: "\f089";
+    position: absolute;
+  }
+  
+  .rating > label { 
+    color: #ddd; 
+   float: right; 
+  }
+  
+  /***** CSS Magic to Highlight Stars on Hover *****/
+  
+  .rating > input:checked ~ label, /* show gold star when clicked */
+  .rating:not(:checked) > label:hover, /* hover current star */
+  .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+  
+  .rating > input:checked + label:hover, /* hover current star when changing rating */
+  .rating > input:checked ~ label:hover,
+  .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+  .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 

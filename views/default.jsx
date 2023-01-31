@@ -36,27 +36,25 @@ function Def(html) {
                         </ul>
                         </div>
                     </div>
-                </nav>                   
+                </nav> 
+               
                 {html.children}
+                </body>
                 
-
-            
-
-                
-                <footer className="fixed-bottom">
-                <div>
-                        <h4>Hello World</h4>
+                <footer className="navbar navbar-expand-md navbar-dark fixed-bottom ">
+                    <div className="p-2 m-2">
+                        <h5 >Hello World</h5>
                     </div>
-                    <div>
-                        <h4 id="footer">Eat U.S.A!!!</h4>
+                    <div className="p-2 m-2">
+                        <h5 className="footer-display">Eat U.S.A!!!</h5>
                     </div>
-                    <div>
-                        <a className="btn btn-primary btn-floating m-1" href="https://github.com/aktiangco" role="button"><i className="fab fa-github" aria-hidden="true"></i></a>
-                        <a className="btn btn-primary btn-floating m-1" href="https://www.linkedin.com/in/allan-kris-tiangco-057a78a0/" role="button"><i className="fab fa-linkedin" aria-hidden="true"></i></a>
-                        <a className="btn btn-primary btn-floating m-1" href="https://www.instagram.com/akvt808/" role="button"><i className="fab fa-instagram" aria-hidden="true"></i></a>
+                    <div className="p-2 m-2">
+                        <a className="btn btn-primary m-1" href="https://github.com/aktiangco" role="button"><i className="fab fa-github" aria-hidden="true"></i></a>
+                        <a className="btn btn-primary m-1" href="https://www.linkedin.com/in/allan-kris-tiangco-057a78a0/" role="button"><i className="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a className="btn btn-primary m-1" href="https://www.instagram.com/akvt808/" role="button"><i className="fab fa-instagram" aria-hidden="true"></i></a>
                     </div>                
-                    </footer>
-            </body>
+                </footer>
+           
         </html>
     )
   }
