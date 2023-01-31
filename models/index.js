@@ -1,3 +1,4 @@
+//REQUIRING MONGOOSE
 const mongoose = require('mongoose')
 
 // CONNECT TO MONGO

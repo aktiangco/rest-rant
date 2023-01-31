@@ -101,26 +101,26 @@
 const router = require('express').Router()
 const db = require('../models')
 
-// INDEX
+// INDEX Page
 router.get('/', (req, res) => {
   db.Place.find()
     .then((places) => {
       res.render('places/index', {places}) //renders to index page
     })
-    .catch(err => {
-      console.log(err)
+    .catch(error => {
+      console.log(error)
       res.render('error404')
     })
 })
-// CREATE
+// CREATE NEW Page
 router.post('/', (req, res) => {
   // res.send('POST /places stub')
   db.Place.create(req.body)
     .then(() => {
       res.redirect('/places')
     })
-    .catch(err => {
-      console.log('err', err)
+    .catch(error => {
+      console.log('error', error)
       res.render('error404')
     })
 })
@@ -128,9 +128,17 @@ router.post('/', (req, res) => {
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
-
+// EDIT/DELETE page (UPDATE)
 router.get('/:id', (req, res) => {
-  res.send('GET /places/:id stub')
+  // res.send('GET /places/:id stub')
+  db.Place.findById(req.params.id)
+    .then(place => {
+      res.render('places/show', {place})
+    })
+    .catch(error => {
+      console.log('error', error)
+      res.render('error404')
+    })
 })
 
 router.put('/:id', (req, res) => {

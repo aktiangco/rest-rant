@@ -9,7 +9,7 @@ function  edit_form(data) {
           <br />
           <form className="container-fluid form-group w-75 " action={`/places/${data.id}?_method=PUT`} method="POST"> {/*need to fix path {data.place.id} */}
             <div className="row">
-              <div className="form-group forms-name col-sm-6">
+              <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="name">PLace Name:</label>
                 <input className="form-control" 
                 id="name" 
@@ -18,7 +18,7 @@ function  edit_form(data) {
                 required 
                 />
               </div>
-              <div className="form-group forms-name col-sm-6">
+              <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="pic">Place Picture:</label>
                 <input className="form-control" type="text" 
                 id="pic" 
@@ -26,7 +26,7 @@ function  edit_form(data) {
                 value={data.place.pic}
                 />
               </div>
-              <div className="form-group forms-name col-sm-6">
+              <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="city">City:</label>
                 <input className="form-control" 
                 id="city" 
@@ -34,7 +34,7 @@ function  edit_form(data) {
                 value={data.place.city}
                 />
               </div>
-              <div className="form-group forms-name col-sm-6">
+              <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="state">State:</label>
                 <input className="form-control"
                 list="state-list" 
@@ -43,7 +43,7 @@ function  edit_form(data) {
                 value={data.place.state}
                 />                              
               </div>
-              <div className="form-group forms-name col-sm-6">
+              <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="cuisines">Cuisines:</label>
                 <input className="form-control"
                 id="cuisines" 
@@ -51,7 +51,11 @@ function  edit_form(data) {
                 value={data.place.cuisines}
                 required
                 />
-              </div>                
+              </div>
+              <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
+                <label for="founded">Founded Year</label>
+                <input className="form-control" id="founded" name="founded" />
+              </div>
               <div className="p-2">
                 <input className="btn btn-primary" type="submit" value="Save Edit" />
               </div>
