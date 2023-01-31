@@ -41,11 +41,11 @@
 const mongoose = require('mongoose')
 
 const placeSchema = new mongoose.Schema({
-  name: { type: String, required: true},
-  city: { type: String, required: 'Somewhere'},
-  state: { type: String, required: 'USA' },
+  name: { type: String, required: true}, 
+  pic: { type: String, default: '/images/dining.jpeg'}, 
   cuisines: { type: String, required: true},
-  pic: String,
+  city: { type: String, default: 'The'},
+  state: { type: String, default: 'USA' }, 
   founded: Number
 })
 

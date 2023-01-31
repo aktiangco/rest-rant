@@ -16,8 +16,9 @@ function show(data) {
             <span className="sections">
               <section className="">Located in {data.place.city}, {data.place.state}</section>
               <section className="">{data.place.cuisines}</section>
+              <section className="">{data.place.founded}</section>
               <div className="p-2">
-              <fieldset className="rating p-2">
+              <fieldset className="rating">
                 <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                 <input type="radio" id="star4half" name="rating" value="4 and a half" /><label className="half" for="star4half" title="Pretty good - 4.5 stars"></label>
                 <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>

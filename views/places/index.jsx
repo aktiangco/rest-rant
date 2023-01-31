@@ -5,19 +5,22 @@ const Def = require('../default')
 function index(data) {
   let placesFormatted = data.places.map((place) => {
     return (
-      <div  className="col-sm-4 ">
+      <div  className="col-sm-6 col-md-4 col-lg-3">
         <h2>
           <a className="text-warning" href={`/places/${place.id}`}>
             {place.name} 
           </a>
         </h2>
-        <p >
+        <p>
           {place.cuisines}
         </p>
         <img className="border border-warning img-places img-fluid " src={place.pic} alt={place.name} />
         <p className="location">
           Located in{' '}{place.city}, {place.state}
+          <br/>
+          Found: {place.founded}
         </p>
+        
         </div>
         
     )

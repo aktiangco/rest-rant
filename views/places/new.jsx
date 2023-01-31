@@ -82,7 +82,7 @@ function new_form() {
                 </div> 
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label for="founded">Founded Year</label>
-                <input className="form-control" id="founded" name="founded" />
+                <input className="form-control" id="founded" name="founded" type="num"/>
               </div>
               <div className="p-2">
                 <input className=" btn-primary p-2" type="submit" value="Add Place" />

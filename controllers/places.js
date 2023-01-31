@@ -107,20 +107,29 @@ router.get('/', (req, res) => {
     .then((places) => {
       res.render('places/index', {places}) //renders to index page
     })
-    .catch(error => {
-      console.log(error)
+    .catch(err => {
+      console.log(err)
       res.render('error404')
     })
 })
 // CREATE NEW Page
 router.post('/', (req, res) => {
+  if (!req.body.pic) {
+          req.body.pic = undefined
+      }
+      if (!req.body.city) {
+          req.body.city = undefined
+      }
+      if (!req.body.state) {
+          req.body.state = undefined
+      }
   // res.send('POST /places stub')
   db.Place.create(req.body)
     .then(() => {
       res.redirect('/places')
     })
-    .catch(error => {
-      console.log('error', error)
+    .catch(err => {
+      console.log('err', err)
       res.render('error404')
     })
 })
@@ -135,8 +144,8 @@ router.get('/:id', (req, res) => {
     .then(place => {
       res.render('places/show', {place})
     })
-    .catch(error => {
-      console.log('error', error)
+    .catch(err => {
+      console.log('err', err)
       res.render('error404')
     })
 })
