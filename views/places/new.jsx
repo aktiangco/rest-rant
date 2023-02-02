@@ -1,29 +1,57 @@
 const React = require('react')
 const Def = require('../default')
 
-function new_form() {
+function new_form(data) {
+  let message = ''
+  if (data.message) {
+    message = (
+      <h4 className="alert">
+        {data.message}
+      </h4>
+    )
+  }
     return (
       <Def>
         <main>
           <h1 className="text-warning">Add a New Place {/* Create Form */}</h1>
+          {message}
           <br />
             <form className="container-fluid form-group w-75" action="/places" method="POST">
               <div className="row">
               <div className="col-sm-6 col-md-4 col-lg-3 form-group  forms-name">
                 <label htmlFor="name">PLace Name:</label>
-                <input className="form-control" id="name" name="name" required/>
+                <input 
+                className="form-control" 
+                id="name" 
+                name="name" 
+                  required
+                />
               </div>
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="pic">Place Picture:</label>
-                <input className="form-control" type="text" id="pic" name="pic"/>
+                <input 
+                className="form-control" 
+                type="text" 
+                id="pic" 
+                  name="pic"
+                />
               </div>
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="city">City:</label>
-                <input className="form-control" id="city" name="city"/>
+                <input 
+                className="form-control" 
+                id="city" 
+                  name="city"
+                />
               </div>
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="state">State:</label>
-                <input className="form-control" list="state-list" id="state" name="state"/>
+                <input 
+                className="form-control" 
+                list="state-list" 
+                id="state" 
+                  name="state"
+                />
                 <datalist id="state-list">
                           <option value="AK">Alaska</option>
                           <option value="AL">Alabama</option>
@@ -78,14 +106,27 @@ function new_form() {
                 </div>
                 <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name ">
                 <label htmlFor="cuisines">Cuisines:</label>
-                <input className="form-control" id="cuisines" name="cuisines" required/>
+                <input 
+                className="form-control" 
+                id="cuisines" 
+                name="cuisines" required/>
                 </div> 
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label for="founded">Founded Year</label>
-                <input className="form-control" id="founded" name="founded" type="num"/>
+                <input
+                  className="form-control"
+                  id="founded"
+                  name="founded"
+                  type="number"
+                  value={new Date().getFullYear()}
+                />
               </div>
               <div className="p-2">
-                <input className=" btn-primary p-2" type="submit" value="Add Place" />
+                <input 
+                className=" btn-primary p-2" 
+                type="submit" 
+                value="Add Place"
+                />
               </div>
               </div>
             </form>          

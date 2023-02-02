@@ -31,8 +31,7 @@ function Def(html) {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/places/new">Add Place</a>
-                                </li>
-                                
+                                </li>                   
                         </ul>
                         </div>
                     </div>

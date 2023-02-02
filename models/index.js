@@ -1,3 +1,5 @@
+// get the environment variables
+require('dotenv').config()
 //REQUIRING MONGOOSE
 const mongoose = require('mongoose')
 

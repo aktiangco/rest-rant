@@ -40,6 +40,12 @@ nav {
     
 }
 
+/* Validation Alert */
+.alert {
+    border: 1px solid #ffc107;
+    background-color: #495057;
+    color: #dc3545;
+}
 
 
 /* img ID in INDEX.JSX */
@@ -71,12 +77,6 @@ border:1px solid #ffc107;
     }
 
 /* SHOW.JSX */
-.content {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
 .sections {
     justify-content:space-between;
     padding: 20px;

@@ -87,7 +87,6 @@
 //       if (!req.body.state) {
 //           req.body.state = 'USA'
 //       }
-
 //       // Save the new data into places[id]
 //       places[id] = req.body
 //       res.redirect(`/places/${id}`)
@@ -96,6 +95,10 @@
 
 // // to import router to other files
 // module.exports = router
+
+
+
+// New to make 
 
 // creating a router
 const router = require('express').Router()
@@ -114,6 +117,7 @@ router.get('/', (req, res) => {
 })
 // CREATE NEW Page
 router.post('/', (req, res) => {
+  // Default image if one is not provided
   if (!req.body.pic) {
           req.body.pic = undefined
       }
@@ -129,9 +133,18 @@ router.post('/', (req, res) => {
       res.redirect('/places')
     })
     .catch(err => {
-      console.log('err', err)
-      res.render('error404')
-    })
+      if (err && err.name == 'ValidationError') {
+        let message = 'ValidationError: '
+        for (var field in err.errors) {
+          message += `${field} was ${err.errors[field].value}.`
+          message += `${err.errors[field].message}.`
+        }
+        console.log('Validation error message', message)
+        res.render('places/new', {message})
+      } else {
+        res.render('error404')
+      }  
+  })
 })
 
 router.get('/new', (req, res) => {
