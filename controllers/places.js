@@ -28,7 +28,7 @@
 //   res.redirect('/places')
 // })
 
-// // EDIT/DELETE page (UPDATE)
+// // SHOW page (UPDATE)
 // router.get('/:id', (req, res) => {
 //   let id = Number(req.params.id)
 //   if (isNaN(id)) {
@@ -39,6 +39,7 @@
 //     res.render('places/show', {place: places[id], id})
 //   }
 // })
+
 // // EDIT button page
 // router.get('/:id/edit', (req, res) => {
 //   let id = Number(req.params.id)
@@ -115,6 +116,11 @@ router.get('/', (req, res) => {
       res.render('error404')
     })
 })
+// NEW page
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
 // CREATE NEW Page
 router.post('/', (req, res) => {
   // Default image if one is not provided
@@ -144,13 +150,10 @@ router.post('/', (req, res) => {
       } else {
         res.render('error404')
       }  
-  })
+    })
 })
 
-router.get('/new', (req, res) => {
-  res.render('places/new')
-})
-// EDIT/DELETE page (UPDATE)
+// SHOW page 
 router.get('/:id', (req, res) => {
   // res.send('GET /places/:id stub')
   db.Place.findById(req.params.id)
@@ -162,15 +165,16 @@ router.get('/:id', (req, res) => {
       res.render('error404')
     })
 })
-
+// REPLACE OR UPDATE
 router.put('/:id', (req, res) => {
   res.send('PUT /places/:id stub')
+  
 })
-// DELETE 
+// DELETE page
 router.delete('/:id', (req, res) => {
   res.send('DELETE /places/:id stub')
 })
-
+// EDIT page
 router.get('/:id/edit', (req, res) => {
   res.send('GET edit form stub')
 })
@@ -181,6 +185,7 @@ router.post('/:id/rant', (req, res) => {
 
 router.delete('/:id/rant/:rantId', (req, res) => {
     res.send('GET /places/:id/rant/:rantId stub')
+
 })
 
 module.exports = router

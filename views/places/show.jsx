@@ -11,27 +11,27 @@ function show(data) {
           <div className="row">
             <div className="col-sm-6">
               <img className="border border-warning img-places" src={data.place.pic} alt={data.place.name} />
-              <h3>
+              <p className="location">
                 Located in {data.place.city}, {data.place.state}
-              </h3>
+              </p>
             </div>
             <div className="col-sm-6">
             <h1 className="text-warning">{data.place.name} {/* SHOW DETAILS PAGE FOR ONE PLACE */}</h1>                 
               <h2>
                 Rating
               </h2>
-              <h4>
+              <p>
                 Not Rated
-              </h4>
+              </p>
               <h2>
                 Description
               </h2>
-              <h3>
+              <p>
                 {data.place.showEstablished()}
-              </h3>
-              <h4>
-                Serving {data.place.cuisines}
-              </h4>
+              </p>
+              <h5>
+                Serving: {data.place.cuisines}
+              </h5>
                         {/* buttons */}
             <div className="edit-delete">
               <div className="p-2">
@@ -48,12 +48,11 @@ function show(data) {
               </div>  
             </div>
             </div>           
-            <div className="p-2 sections">           
+            <div className=" p-2 sections">           
               <section className="comments" type="text">
                 No comments yet!             
               </section>
-            </div>
-           
+            </div>           
           </div>
         </main>
       </Def>

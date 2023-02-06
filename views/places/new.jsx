@@ -22,6 +22,7 @@ function new_form(data) {
                 <label htmlFor="name">PLace Name:</label>
                 <input 
                 className="form-control" 
+                placeholder="..."
                 id="name" 
                 name="name" 
                   required
@@ -31,23 +32,26 @@ function new_form(data) {
                 <label htmlFor="pic">Place Picture:</label>
                 <input 
                 className="form-control" 
+                placeholder="URL" 
                 type="text" 
                 id="pic" 
-                  name="pic"
+                name="pic"
                 />
               </div>
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="city">City:</label>
                 <input 
                 className="form-control" 
+                placeholder="..."
                 id="city" 
-                  name="city"
+                name="city"
                 />
               </div>
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="state">State:</label>
                 <input 
                 className="form-control" 
+                placeholder="..."
                 list="state-list" 
                 id="state" 
                   name="state"
@@ -70,7 +74,7 @@ function new_form(data) {
                           <option value="IN">Indiana</option>
                           <option value="KY">Kentucky</option>
                           <option value="LA">Louisiana</option>
-                          <option value="MA">Massachussets</option>
+                          <option value="MA">Massachusets</option>
                           <option value="MD">Maryland</option>
                           <option value="ME">Maine</option>
                           <option value="MI">Michigan</option>
@@ -107,7 +111,8 @@ function new_form(data) {
                 <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name ">
                 <label htmlFor="cuisines">Cuisines:</label>
                 <input 
-                className="form-control" 
+                className="form-control"
+                placeholder="tacos, cheap dinner, Max's"  
                 id="cuisines" 
                 name="cuisines" required/>
                 </div> 

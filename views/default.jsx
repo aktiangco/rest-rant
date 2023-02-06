@@ -17,11 +17,11 @@ function Def(html) {
                 <nav className="navbar navbar-expand-lg navbar-dark ">
                     <div className="container-fluid" type="list">
                     <a className="navbar-brand text-warning h2">NavBar</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="dropdown" data-bs-target="#dropdownNavbar">
                         <span className="navbar-toggler-icon"><i className="fa-solid fa-bars"></i></span>
-                        </button>
+                        </button>  
                         
-                    <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                        <div className="dropdown navbar-dropdown" id="dropdownNavbar">  
                         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li className="nav-item">
                                 <a className="nav-link" href="/">Home</a>
@@ -31,7 +31,8 @@ function Def(html) {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/places/new">Add Place</a>
-                                </li>                   
+                                </li>
+                                
                         </ul>
                         </div>
                     </div>

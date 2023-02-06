@@ -10,7 +10,7 @@ body {
     color: #d9ded8;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    height: 100VH;
+    height: 400VH;
     
 
 }
@@ -26,7 +26,7 @@ h2 {
     text-decoration: underline;
 }
 .location {
-    text-align: right;
+    text-align:end;
 }
 .forms-name {
     text-align: left;
@@ -42,8 +42,8 @@ nav {
 
 /* Validation Alert */
 .alert {
-    border: 1px solid #ffc107;
-    background-color: #495057;
+    border: 2px dashed #dc3545;
+    background-image: linear-gradient(to bottom right, #ffc107, #495057, #ffc107);
     color: #dc3545;
 }
 
