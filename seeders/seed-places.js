@@ -1,7 +1,6 @@
-const db = require('./models')
+const db = require('../models')
 
-db.Place.create(
-    [{
+db.Place.create([{
     name: 'H-Thai-ML',
     city: 'Seattle',
     state: 'WA',
@@ -43,17 +42,13 @@ db.Place.create(
     cuisines: 'Burgers, American(Traditional)',
     pic: '/images/burgers.webp',
     founded: 2011
-    }      
-    ]
-)
-    
-    
-    
-    .then(() => {
-        console.log('Success!')
-        process.exit()
-    })
-    .catch(err => {
-        console.log('Failure!', err)
-        process.exit()
+}])
+ 
+.then(() => {
+    console.log('Success!')
+    process.exit()
+})
+.catch(err => {
+    console.log('Failure!', err)
+    process.exit()
 })

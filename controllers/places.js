@@ -40,7 +40,7 @@
 //   }
 // })
 
-// // EDIT button page
+// // EDIT button 
 // router.get('/:id/edit', (req, res) => {
 //   let id = Number(req.params.id)
 //   if (isNaN(id)) {
@@ -52,7 +52,7 @@
 //   }
 // })
 
-// // DELETE page
+// // delete button
 // router.delete('/:id', (req, res) => {
 //   let id = Number(req.params.id)
 //   if (isNaN(id)) {
@@ -67,7 +67,7 @@
 //   }
 // })
 
-// // REPLACE item
+// // REPLACE OR UPDATE page
 // router.put('/:id', (req, res) => {
 //   let id = Number(req.params.id)
 //   if (isNaN(id)) {
@@ -98,14 +98,11 @@
 // module.exports = router
 
 
-
-// New to make 
-
-// creating a router
+// * Creating Router
 const router = require('express').Router()
 const db = require('../models')
 
-// INDEX Page
+// * INDEX Page
 router.get('/', (req, res) => {
   db.Place.find()
     .then((places) => {
@@ -116,12 +113,12 @@ router.get('/', (req, res) => {
       res.render('error404')
     })
 })
-// NEW page
+// * NEW page
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
-// CREATE NEW Page
+// * CREATE NEW Page
 router.post('/', (req, res) => {
   // Default image if one is not provided
   if (!req.body.pic) {
@@ -153,11 +150,13 @@ router.post('/', (req, res) => {
     })
 })
 
-// SHOW page 
+// * SHOW page 
 router.get('/:id', (req, res) => {
   // res.send('GET /places/:id stub')
   db.Place.findById(req.params.id)
+    .populate('comments') // populate comments
     .then(place => {
+      console.log(place.comments)
       res.render('places/show', {place})
     })
     .catch(err => {
@@ -165,22 +164,81 @@ router.get('/:id', (req, res) => {
       res.render('error404')
     })
 })
-// REPLACE OR UPDATE
+
+
+
+// * REPLACE OR UPDATE page
 router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
-  
+//   if (!req.body.pic) {
+//     req.body.pic = undefined
+// }
+// if (!req.body.city) {
+//     req.body.city = undefined
+// }
+// if (!req.body.state) {
+//     req.body.state = undefined
+// }
+// db.Place.updateOne(req.params.id) // Todo: working on path
+// .then(() => {
+//   res.redirect('/places')
+// })
+// .catch(err => {
+//   console.log('err', err)
+//   res.render('error404')
+// }) 
+res.send('PUT /places/:id stub')  
 })
-// DELETE page
+
+// * DELETE button
 router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
+  // db.Place.findByIdAndDelete(req.params.id) 
+  //   .then(() => {
+  //     res.status(303).redirect('/places')
+  //   })
+  res.send('PUT /places/delete stub')  
 })
-// EDIT page
+
+
+// * EDIT button
 router.get('/:id/edit', (req, res) => {
+  // db.Place.findById(req.params.id)
+  // .then(() => {
+  //   res.render(`/places${req.params.id}`) // Todo: working on path
+  // })
+  // .catch(err => {
+  //   console.log('err', err)
+  //   res.render('error404')
+  // })
+  
   res.send('GET edit form stub')
 })
 
+// * POST COMMENT
 router.post('/:id/rant', (req, res) => {
-  res.send('GET /places/:id/rant stub')
+  console.log(req.body)
+  //using ternary operator for the checkbox
+  if (req.body.rant) {
+    req.body.rant = true
+  } 
+  else {
+    req.body.rant = false
+  }
+  db.Place.findById(req.params.id)
+    .then(place => {
+      // Create comment (Done)
+      db.Comment.create(req.body)
+        .then(comment => {
+      //  Save comment id to place
+        place.comments.push(comment.id)
+        place.save()
+          .then(() => {
+          res.redirect(`/places${req.params.id}`)
+        })
+      })
+    })
+    .catch(err => {
+    res.render('error404')
+  })
 })
 
 router.delete('/:id/rant/:rantId', (req, res) => {

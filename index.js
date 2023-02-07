@@ -6,7 +6,7 @@ const app = express()
 const methodOverride = require('method-override')
 
 
-// Express Settings
+// MIDDLEWARE
 app.set('views', __dirname + '/views') // double underscore "__dirname" = dunder-score
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())

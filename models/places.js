@@ -1,7 +1,7 @@
 // SCHEMA //
 
 const mongoose = require('mongoose')
-const comment = require('./comment')
+const comment = require('./comments')
 
 const placeSchema = new mongoose.Schema({
   name: { type: String, required: true}, 
@@ -11,14 +11,12 @@ const placeSchema = new mongoose.Schema({
   state: { type: String, default: 'USA' }, 
   founded: {
     type: Number,
-    min: [ 1672, 'Surely not that old?!'],
-    max: [new Date().getFullYear(), 'Hey, this year is in the future!']
+    min: [1673, 'Surely not that old?!'],
+    max: [new Date().getFullYear(), 'This is the future!']
   },
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
   // adding a comment array
-  comments: [{ 
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Comment'
-  }]
+
 })
 
 // Instance Methods Property
@@ -27,5 +25,7 @@ placeSchema.methods.showEstablished = function() {
 }
 
 module.exports = mongoose.model('Place', placeSchema)
+
+
 
 

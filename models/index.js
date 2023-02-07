@@ -10,4 +10,4 @@ mongoose.connect(process.env.MONGO_URI, {
   })
 // exports models
 module.exports.Place = require('./places') 
-module.exports.Comment = require('./comment')
+module.exports.Comment = require('./comments')
