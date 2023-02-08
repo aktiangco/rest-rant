@@ -153,7 +153,7 @@ router.post('/', (req, res) => {
 // * SHOW page 
 router.get('/:id', (req, res) => {
   // res.send('GET /places/:id stub')
-  db.Place.findById(req.params.id)
+  db.Place.findById({_id: req.params.id})
     .populate('comments') // populate comments
     .then(place => {
       console.log(place.comments)
@@ -164,6 +164,9 @@ router.get('/:id', (req, res) => {
       res.render('error404')
     })
 })
+
+
+
 
 
 
@@ -214,34 +217,55 @@ router.get('/:id/edit', (req, res) => {
 })
 
 // * POST COMMENT
-router.post('/:id/rant', (req, res) => {
+router.post('/:id/comment', (req, res) => {
   console.log(req.body)
-  //using ternary operator for the checkbox
-  if (req.body.rant) {
-    req.body.rant = true
-  } 
-  else {
-    req.body.rant = false
-  }
-  db.Place.findById(req.params.id)
+  // // * using ternary operator for the checkbox
+  // if (req.body.rant) {
+  //   req.body.rant = true
+  // } 
+  // else {
+  //   req.body.rant = false
+  // }
+  // db.Place.findById(req.params.id)
+  //   .then(place => {
+  //     // Create comment (Done)
+  //     db.Comment.create(req.body)
+  //       .then(comment => {
+  //     //  Save comment id to place
+  //       place.comments.push(comment.id)
+  //       place.save()
+  //         .then(() => {
+  //           // res.send('GET /places/:id/rant stub')
+  //         res.redirect(`/places${req.params.id}`)
+  //       })
+  //       })
+  //       .catch(err => {
+  //       res.render('error404')
+  //     })
+  //   })
+  //   .catch(err => {
+  //   res.render('error404')
+  //   })
+    db.Place.findById(req.params.id)
     .then(place => {
-      // Create comment (Done)
-      db.Comment.create(req.body)
+        db.Comment.create(req.body)
         .then(comment => {
-      //  Save comment id to place
-        place.comments.push(comment.id)
-        place.save()
-          .then(() => {
-          res.redirect(`/places${req.params.id}`)
+            place.comments.push(comment.id)
+            place.save()
+            .then(() => {
+                res.redirect(`/places/${req.params.id}`)
+            })
         })
-      })
+        .catch(err => {
+            res.render('error404')
+        })
     })
     .catch(err => {
-    res.render('error404')
-  })
+        res.render('error404')
+    })
 })
 
-router.delete('/:id/rant/:rantId', (req, res) => {
+router.delete('/:id/rant/:commentId', (req, res) => {
     res.send('GET /places/:id/rant/:rantId stub')
 
 })

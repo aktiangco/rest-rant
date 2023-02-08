@@ -22,8 +22,13 @@ main {
     height: auto; 
 }
 
-h2 {
+h2{
     text-decoration: underline;
+    color:#ffc107;
+}
+h3{
+    text-decoration: none;
+    color:#ffc107;
 }
 .location {
     text-align:end;
@@ -132,39 +137,4 @@ footer div:last-child {
     100% { color: #ffc107; }
 }
 
-/* Rating */
-
-.rating { 
-    border: none;
-    float: center;
-  }
-  
-  .rating > input { display: none; } 
-  .rating > label:before { 
-    margin: 5px;
-    font-size: 1.25em;
-    font-family: FontAwesome;
-    display: inline-block;
-    content: "\f005";
-  }
-  
-  .rating > .half:before { 
-    content: "\f089";
-    position: absolute;
-  }
-  
-  .rating > label { 
-    color: #ddd; 
-   float: right; 
-  }
-  
-  /***** CSS Magic to Highlight Stars on Hover *****/
-  
-  .rating > input:checked ~ label, /* show gold star when clicked */
-  .rating:not(:checked) > label:hover, /* hover current star */
-  .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
-  
-  .rating > input:checked + label:hover, /* hover current star when changing rating */
-  .rating > input:checked ~ label:hover,
-  .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-  .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+ 

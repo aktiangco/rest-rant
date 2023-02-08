@@ -20,9 +20,9 @@ function show(data) {
             }
           </h2>
           <h4>{c.content}</h4>
-          <h3>
+          <h4>
             <strong>- {c.author}</strong>
-          </h3>
+          </h4>
           <h4>Rating: {c.stars}</h4>
         </div>
       )
@@ -76,43 +76,50 @@ function show(data) {
             </div> 
             
             {/* comments section */}
-            <div className=" p-2 sections comments">           
-                <h3 className=" p-2 ">Comments</h3>
-                {comments}         
-            </div> 
-
+            <div className=" p-2 comments">           
+              <h3 className=" p-2 ">Comments</h3>
+              {comments}
+            </div>
             <div className=" p-2 sections comments">
-              <form className="container-fluid form-group w-75" action={`/comments/${data.id}?_method=PUT`} method="POST"> // Todo: action path
+              <h3>Got Your Own Rant or Rave?</h3>
+               {/* action path */}
+              <form className="container-fluid form-group w-75" action={`/places/${data.place.id}/comment`} method="POST">
+               
                 <div className="row">
                 <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
-                  <label htmlFor="author" >Author:</label>
+                  <label for="author" >Author:</label>
                     <input
                       className="form-control"
+                      placeholder="Your Name Here"
                       type="text" 
                       id="author" 
                       name="author"
                     />
                   </div>
                   <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
-                  <label htmlFor="content">Content</label>
+                  <label for="content">Content</label>
                     <input
+                      placeholder="Write your Comment Here"
                       className="form-control"
                       type="textarea" 
                       id="content" 
                       name="content"
                       />
                   </div>
-                  <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
-                  <label htmlFor="stars">Star Rating</label>
+                  <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name d-flex p-2">
+                  <label for="stars" className="text-warning d-flex p-2">Star Rating</label>
                     <input
-                      className="form-control"
-                      type="number" 
+                      className="form-control-range"
+                      type="range" 
                       id="stars" 
                       name="stars"
+                      step="0.5"
+                      min="1"
+                      max="5"
                       />
                   </div>
                   <div className="col-sm-6 col-md-4 col-lg-3  d-flex p-2">
-                  <label htmlFor="rant" className="checkbox d-flex p-2">Rant</label>
+                  <label for="rant" className="checkbox d-flex p-2">Rant 😡</label>
                     <input
                       className="checkbox d-flex p-2"
                       type="checkbox" 
@@ -123,7 +130,7 @@ function show(data) {
                 </div>
                 <div className="p-2">
                 <input 
-                className=" btn-primary p-2" 
+                className="btn btn-primary p-2" 
                 type="submit" 
                 value="Add Comment"
                 />
