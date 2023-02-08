@@ -66,7 +66,7 @@ function show(data) {
                 </a> 
               </div>           
               <div className="p-2">
-                <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}> 
                   <button type="submit" className="btn btn-danger">
                     Delete
                   </button>
@@ -78,7 +78,10 @@ function show(data) {
             {/* comments section */}
             <div className=" p-2 comments">           
               <h3 className=" p-2 ">Comments</h3>
-              {comments}
+
+                {comments}
+          
+              
             </div>
             <div className=" p-2 sections comments">
               <h3>Got Your Own Rant or Rave?</h3>
@@ -109,7 +112,7 @@ function show(data) {
                   <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name d-flex p-2">
                   <label for="stars" className="text-warning d-flex p-2">Star Rating</label>
                     <input
-                      className="form-control-range"
+                      className="form-control-range "
                       type="range" 
                       id="stars" 
                       name="stars"
@@ -119,7 +122,7 @@ function show(data) {
                       />
                   </div>
                   <div className="col-sm-6 col-md-4 col-lg-3  d-flex p-2">
-                  <label for="rant" className="checkbox d-flex p-2">Rant 😡</label>
+                  <label for="rant" className="checkbox d-flex p-2 text-danger font-weight-bold">Rant 😡</label>
                     <input
                       className="checkbox d-flex p-2"
                       type="checkbox" 

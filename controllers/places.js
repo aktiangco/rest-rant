@@ -172,47 +172,25 @@ router.get('/:id', (req, res) => {
 
 // * REPLACE OR UPDATE page
 router.put('/:id', (req, res) => {
-//   if (!req.body.pic) {
-//     req.body.pic = undefined
-// }
-// if (!req.body.city) {
-//     req.body.city = undefined
-// }
-// if (!req.body.state) {
-//     req.body.state = undefined
-// }
-// db.Place.updateOne(req.params.id) // Todo: working on path
-// .then(() => {
-//   res.redirect('/places')
-// })
-// .catch(err => {
-//   console.log('err', err)
-//   res.render('error404')
-// }) 
 res.send('PUT /places/:id stub')  
 })
 
 // * DELETE button
 router.delete('/:id', (req, res) => {
-  // db.Place.findByIdAndDelete(req.params.id) 
-  //   .then(() => {
-  //     res.status(303).redirect('/places')
-  //   })
-  res.send('PUT /places/delete stub')  
+  db.Place.findByIdAndDelete(req.params.id)
+  .then(() => {
+      res.redirect('/places')
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
+  // res.send('PUT /places/delete stub')  
 })
 
 
 // * EDIT button
 router.get('/:id/edit', (req, res) => {
-  // db.Place.findById(req.params.id)
-  // .then(() => {
-  //   res.render(`/places${req.params.id}`) // Todo: working on path
-  // })
-  // .catch(err => {
-  //   console.log('err', err)
-  //   res.render('error404')
-  // })
-  
   res.send('GET edit form stub')
 })
 
