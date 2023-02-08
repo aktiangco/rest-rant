@@ -219,40 +219,22 @@ router.get('/:id/edit', (req, res) => {
 // * POST COMMENT
 router.post('/:id/comment', (req, res) => {
   console.log(req.body)
-  // // * using ternary operator for the checkbox
-  // if (req.body.rant) {
-  //   req.body.rant = true
-  // } 
-  // else {
-  //   req.body.rant = false
-  // }
-  // db.Place.findById(req.params.id)
-  //   .then(place => {
-  //     // Create comment (Done)
-  //     db.Comment.create(req.body)
-  //       .then(comment => {
-  //     //  Save comment id to place
-  //       place.comments.push(comment.id)
-  //       place.save()
-  //         .then(() => {
-  //           // res.send('GET /places/:id/rant stub')
-  //         res.redirect(`/places${req.params.id}`)
-  //       })
-  //       })
-  //       .catch(err => {
-  //       res.render('error404')
-  //     })
-  //   })
-  //   .catch(err => {
-  //   res.render('error404')
-  //   })
+  // * using ternary operator for the checkbox
+  if (req.body.rant) {
+    req.body.rant = true
+  }
+  else {
+    req.body.rant = false
+  }  
     db.Place.findById(req.params.id)
-    .then(place => {
+      .then(place => {
+       // Create comment (Done)
         db.Comment.create(req.body)
         .then(comment => {
             place.comments.push(comment.id)
             place.save()
-            .then(() => {
+              .then(() => {
+                    // res.send('GET /places/:id/rant stub')
                 res.redirect(`/places/${req.params.id}`)
             })
         })
