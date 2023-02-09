@@ -98,7 +98,7 @@
 // module.exports = router
 
 
-// * Creating Router
+// * Creating new Router
 const router = require('express').Router()
 const db = require('../models')
 
@@ -113,7 +113,7 @@ router.get('/', (req, res) => {
       res.render('error404')
     })
 })
-// * NEW page
+// * NEW page 
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
@@ -121,6 +121,7 @@ router.get('/new', (req, res) => {
 // * CREATE NEW Page
 router.post('/', (req, res) => {
   // Default image if one is not provided
+  // bang operator "!" vs. "===" (req.body.pic === '')
   if (!req.body.pic) {
           req.body.pic = undefined
       }
@@ -203,8 +204,7 @@ router.get('/:id/edit', (req, res) => {
   })
 })
 
-
-// * POST COMMENT
+// * POST comment
 router.post('/:id/comment', (req, res) => {
   console.log(req.body)
   // * using ternary operator for the checkbox
@@ -241,8 +241,18 @@ router.post('/:id/comment', (req, res) => {
     })
 })
 
+// * DELETE comment
 router.delete('/:id/comment/:commentId', (req, res) => {
-    res.send('GET /places/:id/comment/:commentId stub')
+  // res.send('GET /places/:id/comment/:commentId stub')
+    db.Comment.findByIdAndDelete(req.params.commentId)
+    .then(() => {
+        console.log('Comment deleted')
+        res.redirect(`/places/${req.params.id}`)
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
 
 })
 
