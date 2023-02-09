@@ -93,6 +93,25 @@ border:1px solid #ffc107;
     padding: 50px;
 }
 
+  /* Comment area */
+  .comment-section{
+    max-height: 200px;
+    max-width: 100%;
+    justify-content: center;
+    overflow-y: scroll;
+    display:flex;
+}
+.comment2{
+    height: 10%;
+    padding: 2%;
+    border: 1px solid #ffc107;
+    border-radius: 20px;
+    background-color: #495057;
+    color: #d9ded8;;
+    flex-grow: 1;
+}
+
+
 .edit-delete {
     justify-content: center;
     padding: 10px;
@@ -165,20 +184,3 @@ footer div:last-child {
     background: #ffc107;
     cursor: pointer;
   }
-
-  /* Comment area */
-  .comment-section{
-    max-height: 25vh;
-    max-width: 100%;
-    justify-content: center;
-    background-color: #3f3f3f;
-    overflow-y: scroll;
-    display:inline-flex;
-}
-.comment{
-    height: 10%;
-    padding: 2%;
-    margin: 2%;
-    background-color: #d9ded8;
-    color: #3f3f3f;
-}

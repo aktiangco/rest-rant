@@ -15,7 +15,7 @@ let commentSchema = new mongoose.Schema({
     },
     content: { 
         type: String, 
-        default: '' 
+        default: 'Yummy in my tummy!' 
     }
 })
   

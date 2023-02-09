@@ -203,7 +203,13 @@ router.post('/:id/comment', (req, res) => {
   }
   else {
     req.body.rant = false
-  }  
+  } 
+  if (!req.body.author) {
+    req.body.author = undefined
+  }
+  if (!req.body.content) {
+    req.body.content = undefined
+}
     db.Place.findById(req.params.id)
       .then(place => {
        // Create comment (Done)

@@ -8,24 +8,42 @@ function show(data) {
       No comments yet!
     </h3>
   )
+  // adding star rating
+  let rating = (
+    <h3 className="inactive">
+      Not yet rated
+    </h3>
+  )
   if (data.place.comments.length) {
+    // star rating logic
+    let sumRatings = data.place.comments.reduce((tot, c) => {
+      return tot + c.stars
+    }, 0)
+    let averageRating = sumRatings / data.place.comments.length
+    rating = (
+      <h3>
+        {Math.round(averageRating)} stars
+      </h3>
+    )
+    // comment logic
     comments = data.place.comments.map(c => {
       return (
         // Add css later
-        <div className="border comment-section">
-          <div className="border">
-            <h2>
+        <div>
+          <div className="comment2">
+            <h3>
               {c.rant
                 ? 'Rant! 😡'
                 : 'Rave! 😍'
               }
-            </h2>
-            <h4 className="d-flex">{c.content}</h4>
+            </h3>
+            <h4>{c.content}</h4>
             <h4>
-              <strong>- {c.author}</strong>
+              <strong>📝 {c.author}</strong>
             </h4>
-            <h4>Rating: {c.stars}</h4>
+          <h4>Rating: {c.stars}</h4>
           </div>
+          <br/>
           </div>
         
         )
@@ -50,9 +68,8 @@ function show(data) {
               <h2>
                 Rating
               </h2>
-              <p>
-                Not Rated
-              </p>
+              {rating}
+              <br/>
               <h2>
                 Description
               </h2>
@@ -81,17 +98,17 @@ function show(data) {
             
             {/* comments section */}
             <div className=" p-2 comments">           
-              <h3 className=" p-2 ">Comments</h3>
+              <h2 className=" p-2 ">Reviews</h2>
               
               <div className="comment-section">
-                <div className="comment">
+                <div className="comment2">
                 {comments}
                 </div>
               </div>
                 
           
               
-            </div>
+            
             <div className=" p-2 sections comments">
               <h3>Got Your Own Rant or Rave?</h3>
                {/* action path */}
@@ -106,6 +123,7 @@ function show(data) {
                       type="text" 
                       id="author" 
                       name="author"
+                    
                     />
                   </div>
                   <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
@@ -130,13 +148,14 @@ function show(data) {
                       max="5"
                       />
                   </div>
-                  <div className="col-sm-6 col-md-4 col-lg-3 font-weight-bold">
+                  <div className="col-sm-6 col-md-4 col-lg-3 font-weight-bold ">
                   <label htmlFor="rant" className="p-2 text-danger "><h4>Rant 😡</h4></label>
                     <input
                       className="checkbox p-2"
                       type="checkbox" 
                       id="rant" 
                       name="rant"
+                    
                       />
                 </div>
                 </div>
@@ -149,7 +168,8 @@ function show(data) {
               </div>
               </form> 
             </div>
-          </div>
+            </div>
+            </div>
         </main>
       </Def>
     )
