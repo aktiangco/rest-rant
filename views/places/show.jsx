@@ -67,8 +67,7 @@ function show(data) {
               </p>
             </div>
             <div className="col-sm-6">
-              <h1 className="text-warning">{data.place.name} {/* SHOW DETAILS PAGE FOR ONE PLACE */}</h1>
-              
+              <h1 className="text-warning">{data.place.name} {/* SHOW DETAILS PAGE FOR ONE PLACE */}</h1>              
               <h2>
                 Rating
               </h2>
@@ -86,7 +85,7 @@ function show(data) {
                         {/* buttons */}
             <div className="edit-delete">
               <div className="p-2">
-                <a href={`/places/${data.id}/edit`} className="btn btn-primary"> 
+                <a href={`/places/${data.place.id}/edit`} className="btn btn-primary"> 
                   Edit
                 </a> 
               </div>           

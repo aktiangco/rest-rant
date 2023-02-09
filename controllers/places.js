@@ -191,7 +191,6 @@ router.delete('/:id', (req, res) => {
   // res.send('DELETE /places/:id STUB')  
 })
 
-
 // * EDIT button
 router.get('/:id/edit', (req, res) => {
   // res.send('GET edit form stub')
