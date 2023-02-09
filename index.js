@@ -1,5 +1,6 @@
 // get the environment variables
 require('dotenv').config()
+
 // Require needed node modules
 const express = require('express')
 const app = express()
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
     res.render('error404') // 404 Not Found
 });
+
 
 // Listening
 app.listen(process.env.PORT)

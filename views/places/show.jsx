@@ -12,22 +12,25 @@ function show(data) {
     comments = data.place.comments.map(c => {
       return (
         // Add css later
-        <div className="border">
-          <h2 className="rant">
-            {c.rant
-              ? 'Rant! 😡'
-              : 'Rave! 😍'
-            }
-          </h2>
-          <h4>{c.content}</h4>
-          <h4>
-            <strong>- {c.author}</strong>
-          </h4>
-          <h4>Rating: {c.stars}</h4>
-        </div>
-      )
-    })
-  }
+        <div className="border comment-section">
+          <div className="border">
+            <h2>
+              {c.rant
+                ? 'Rant! 😡'
+                : 'Rave! 😍'
+              }
+            </h2>
+            <h4 className="d-flex">{c.content}</h4>
+            <h4>
+              <strong>- {c.author}</strong>
+            </h4>
+            <h4>Rating: {c.stars}</h4>
+          </div>
+          </div>
+        
+        )
+      })
+    }
     return (
       <Def>           
         <main>
@@ -42,7 +45,8 @@ function show(data) {
               </p>
             </div>
             <div className="col-sm-6">
-            <h1 className="text-warning">{data.place.name} {/* SHOW DETAILS PAGE FOR ONE PLACE */}</h1>                 
+              <h1 className="text-warning">{data.place.name} {/* SHOW DETAILS PAGE FOR ONE PLACE */}</h1>
+              
               <h2>
                 Rating
               </h2>
@@ -78,8 +82,13 @@ function show(data) {
             {/* comments section */}
             <div className=" p-2 comments">           
               <h3 className=" p-2 ">Comments</h3>
-
+              
+              <div className="comment-section">
+                <div className="comment">
                 {comments}
+                </div>
+              </div>
+                
           
               
             </div>
@@ -90,7 +99,7 @@ function show(data) {
                
                 <div className="row">
                 <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
-                  <label for="author" >Author:</label>
+                  <label htmlFor="author" >Author:</label>
                     <input
                       className="form-control"
                       placeholder="Your Name Here"
@@ -100,7 +109,7 @@ function show(data) {
                     />
                   </div>
                   <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
-                  <label for="content">Content</label>
+                  <label htmlFor="content">Content</label>
                     <input
                       placeholder="Write your Comment Here"
                       className="form-control"
@@ -109,10 +118,10 @@ function show(data) {
                       name="content"
                       />
                   </div>
-                  <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name d-flex p-2">
-                  <label for="stars" className="text-warning d-flex p-2">Star Rating</label>
+                  <div className="col-sm-6 col-md-4 col-lg-3">
+                  <label htmlFor="stars" className="text-warning p-2">Star Rating</label>
                     <input
-                      className="form-control-range "
+                      className="form-control-range form-control d-flex p-2 slider"
                       type="range" 
                       id="stars" 
                       name="stars"
@@ -121,10 +130,10 @@ function show(data) {
                       max="5"
                       />
                   </div>
-                  <div className="col-sm-6 col-md-4 col-lg-3  d-flex p-2">
-                  <label for="rant" className="checkbox d-flex p-2 text-danger font-weight-bold">Rant 😡</label>
+                  <div className="col-sm-6 col-md-4 col-lg-3 font-weight-bold">
+                  <label htmlFor="rant" className="p-2 text-danger "><h4>Rant 😡</h4></label>
                     <input
-                      className="checkbox d-flex p-2"
+                      className="checkbox p-2"
                       type="checkbox" 
                       id="rant" 
                       name="rant"
