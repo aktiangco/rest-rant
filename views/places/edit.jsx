@@ -7,7 +7,7 @@ function  edit_form(data) {
           <main>
           <h1 className="text-warning">Edit Place</h1>
           <br />
-          <form className="container-fluid form-group w-75 " action={`/places/${data.id}?_method=PUT`} method="POST"> {/*need to fix path {data.place.id} */}
+          <form className="container-fluid form-group w-75 " action={`/places/${data.place.id}?_method=PUT`} method="POST"> {/*need to fix path {data.place.id} */}
             <div className="row">
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
                 <label htmlFor="name">PLace Name:</label>
@@ -52,8 +52,9 @@ function  edit_form(data) {
                 required
                 />
               </div>
+              {/* added founded year */}
               <div className="col-sm-6 col-md-4 col-lg-3 form-group forms-name">
-                <label for="founded">Founded Year</label>
+                <label for="founded">Founded</label>
                 <input className="form-control"
                 id="founded"
                 name="founded"
@@ -61,7 +62,7 @@ function  edit_form(data) {
                 />
               </div>
               <div className="p-2">
-                <input className="btn btn-primary" type="submit" value="Save Edit" />
+                <input className="btn btn-primary" type="submit" value="Update Place" />
               </div>
             </div>
           </form>
