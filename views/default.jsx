@@ -12,38 +12,27 @@ function Def(html) {
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
                 <link rel="stylesheet" href="/css/style.css" /> 
+                <link rel="icon" type="images/x-icon" href="/images/spoon.png" />
             </head>
             <body>                
-                <nav className="navbar navbar-expand-lg navbar-dark ">
-                    <div className="container-fluid" type="list">
-                        <a className="navbar-brand text-warning h2">NavBar</a>
-                        
-                    {/* <button className="navbar-toggler" type="button" data-bs-toggle="dropdown" data-bs-target="#dropdownNavbar">
-                        <span className="navbar-toggler-icon"><i className="fa-solid fa-bars"></i></span>
-                        </button>   */}
-                        
-                        <div className="dropdown navbar-dropdown" id="dropdownNavbar">  
-                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">Home</a>
+                <nav className="nav">
+                        <ul className="nav-ul">
+                            <li className="nav-li">
+                                <a className="nav-li" href="/"><i className="fa fa-house"></i> Home</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/places">Places</a>
+                            <li className="nav-li">
+                                <a className="nav-li" href="/places"><i className="fa fa-list"> </i> Place's</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/places/new">Add Place</a>
-                                </li>
-                                
+                            <li className="nav-li">
+                                <a className="nav-li" href="/places/new"><i className="fa fa-add"></i> Place</a>
+                                </li>                                
                         </ul>
-                        </div>
-                    </div>
-                </nav> 
+               </nav>
                
                 {html.children}
+               
                 
-                </body>
-                
-                <footer className="navbar navbar-expand-md navbar-dark fixed-bottom ">
+                <footer className="navbar navbar-expand-md  form-colork fixed-bottom ">
                     <div className="p-2 m-2">
                         <h5 >Hello World</h5>
                     </div>
@@ -51,12 +40,12 @@ function Def(html) {
                         <h5 className="footer-display">Eat U.S.A!!!</h5>
                     </div>
                     <div className="p-2 m-2">
-                        <a className="btn btn-primary m-1" href="https://github.com/aktiangco" role="button"><i className="fab fa-github" aria-hidden="true"></i></a>
-                        <a className="btn btn-primary m-1" href="https://www.linkedin.com/in/allan-kris-tiangco-057a78a0/" role="button"><i className="fab fa-linkedin" aria-hidden="true"></i></a>
-                        <a className="btn btn-primary m-1" href="https://www.instagram.com/akvt808/" role="button"><i className="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a className="btn btn-primary m-1" href="https://github.com/aktiangco" role="button"><i className="fab fa-github" ></i></a>
+                        <a className="btn btn-primary m-1" href="https://www.linkedin.com/in/allan-kris-tiangco-057a78a0/" role="button"><i className="fab fa-linkedin"></i></a>
+                        <a className="btn btn-primary m-1" href="https://www.instagram.com/akvt808/" role="button"><i className="fab fa-instagram"></i></a>
                     </div>                
                 </footer>
-           
+                </body>
         </html>
     )
   }
