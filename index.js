@@ -1,13 +1,11 @@
 // get the environment variables
 require('dotenv').config()
-
 // Require needed node modules
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 
-
-// MIDDLEWARE
+// MIDDLEWARE Express settings.
 app.set('views', __dirname + '/views') // double underscore "__dirname" = dunder-score
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
@@ -27,7 +25,6 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
     res.render('error404') // 404 Not Found
 });
-
 
 // Listening
 app.listen(process.env.PORT)

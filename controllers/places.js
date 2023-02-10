@@ -113,10 +113,7 @@ router.get('/', (req, res) => {
       res.render('error404')
     })
 })
-// * NEW page 
-router.get('/new', (req, res) => {
-  res.render('places/new')
-})
+
 
 // * CREATE NEW Page
 router.post('/', (req, res) => {
@@ -150,10 +147,14 @@ router.post('/', (req, res) => {
       }  
     })
 })
+// * NEW page 
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
 
 // * SHOW page 
 router.get('/:id', (req, res) => {
-  // res.send('GET /places/:id stub')
+   // res.send('GET /places/:id stub')
   db.Place.findById({_id: req.params.id})
     .populate('comments') // populate comments
     .then(place => {
@@ -169,26 +170,26 @@ router.get('/:id', (req, res) => {
 // * REPLACE OR UPDATE page
 router.put('/:id', (req, res) => {
 // res.send('PUT /places/:id stub')  
-  db.Place.findOneAndUpdate(req.params.id, req.body)
+  db.Place.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
-    res.redirect(`/places/${req.params.id}`)
+        res.redirect(`/places/${req.params.id}`)
     })
     .catch(err => {
-      console.log('err', err)
-      res.render('error404')
+        console.log('err', err)
+        res.render('error404')
   })
 })
 
 // * DELETE button
 router.delete('/:id', (req, res) => {
   db.Place.findByIdAndDelete(req.params.id)
-  .then(() => {
-      res.redirect('/places')
-  })
-  .catch(err => {
-      console.log('err', err)
-      res.render('error404')
-  })
+    .then(() => {
+        res.redirect('/places')
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
   // res.send('DELETE /places/:id STUB')  
 })
 
@@ -207,7 +208,7 @@ router.get('/:id/edit', (req, res) => {
 // * POST comment
 router.post('/:id/comment', (req, res) => {
   console.log(req.body)
-  // * using ternary operator for the checkbox
+  // * using conditional for the checkbox
   if (req.body.rant) {
     req.body.rant = true
   }

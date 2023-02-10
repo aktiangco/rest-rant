@@ -95,9 +95,9 @@ border:1px solid #ffc107;
 
   /* Comment area */
   .comment-section{
-    max-height: 200px;
+    max-height: 300px;
     max-width: 100%;
-    justify-content: center;
+    /* justify-content: center; */
     overflow-y: scroll;
     display:flex;
 }
@@ -120,6 +120,15 @@ border:1px solid #ffc107;
 .edit-delete div:nth-child{
     padding: 5px;
     margin: 10px;
+}
+.rant-checkbox{
+    justify-content: center;
+    padding:20px;
+}
+.rant-checkbox:hover{
+    justify-content: center;
+    padding:20px;
+    background-color: #dc3545;
 }
 
 /* FOOTER */

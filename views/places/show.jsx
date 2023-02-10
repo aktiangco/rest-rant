@@ -153,7 +153,7 @@ function show(data) {
                       max="5"
                       />
                   </div>
-                  <div className="col-sm-6 col-md-4 col-lg-3 font-weight-bold ">
+                  <div className="col-sm-6 col-md-4 col-lg-3 font-weight-bold rant-checkbox">
                   <label htmlFor="rant" className="p-2 text-danger "><h4>Rant 😡</h4></label>
                     <input
                       className="checkbox p-2"
